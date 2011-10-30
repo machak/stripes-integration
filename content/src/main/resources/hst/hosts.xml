@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="hst:hosts" xmlns:sv="http://www.jcp.org/jcr/sv/1.0">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>hst:virtualhosts</sv:value>
+  </sv:property>
+  <sv:property sv:name="jcr:uuid" sv:type="String">
+    <sv:value>e5aa93c6-e94d-4c57-9c3c-d58871bc619b</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:defaulthostname" sv:type="String">
+    <sv:value>127.0.0.1</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:homepage" sv:type="String">
+    <sv:value>home</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:locale" sv:type="String">
+    <sv:value>en_US</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:pagenotfound" sv:type="String">
+    <sv:value>error</sv:value>
+  </sv:property>
+  <sv:property sv:multiple="true" sv:name="hst:prefixexclusions" sv:type="String">
+    <sv:value>/binaries/</sv:value>
+    <sv:value>/images/</sv:value>
+    <sv:value>/login/</sv:value>
+    <sv:value>/examples/</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:scheme" sv:type="String">
+    <sv:value>http</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:showcontextpath" sv:type="Boolean">
+    <sv:value>true</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:showport" sv:type="Boolean">
+    <sv:value>true</sv:value>
+  </sv:property>
+  <sv:property sv:multiple="true" sv:name="hst:suffixexclusions" sv:type="String">
+    <sv:value>.do</sv:value>
+    <sv:value>.jsp</sv:value>
+    <sv:value>.css</sv:value>
+    <sv:value>.js</sv:value>
+    <sv:value>.pdf</sv:value>
+    <sv:value>.ico</sv:value>
+    <sv:value>.gif</sv:value>
+    <sv:value>.GIF</sv:value>
+    <sv:value>.jpg</sv:value>
+    <sv:value>.jpeg</sv:value>
+    <sv:value>.JPEG</sv:value>
+    <sv:value>.JPG</sv:value>
+    <sv:value>.png</sv:value>
+    <sv:value>.PNG</sv:value>
+    <sv:value>.ftl</sv:value>
+    <sv:value>.FTL</sv:value>
+  </sv:property>
+  <sv:property sv:name="hst:versioninpreviewheader" sv:type="Boolean">
+    <sv:value>true</sv:value>
+  </sv:property>
+  <sv:node sv:name="dev-internal">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:virtualhostgroup</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>0b778fd8-9e84-4b11-8395-a0646d4f1636</sv:value>
+    </sv:property>
+    <sv:node sv:name="127.0.0.1">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:virtualhost</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>ab5e51e8-6227-418e-95ed-5d5b17973f44</sv:value>
+      </sv:property>
+      <sv:node sv:name="hst:root">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:mount</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+          <sv:value>0e060894-e077-450c-82d8-9df0e37e0fe5</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:mountpoint" sv:type="String">
+          <sv:value>/hst:hst/hst:sites/stripesintegration-live</sv:value>
+        </sv:property>
+        <sv:node sv:name="manager">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hst:mount</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>2ae7d6c3-e9e7-4797-ab6d-da543e46bf09</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:authenticated" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:mountpoint" sv:type="String">
+            <sv:value>/hst:hst/hst:sites/stripesintegration-preview</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:namedpipeline" sv:type="String">
+            <sv:value>ComposerPreviewPipeline</sv:value>
+          </sv:property>
+          <sv:property sv:multiple="true" sv:name="hst:roles" sv:type="String">
+            <sv:value>admin</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:sessionstateful" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:subjectbasedsession" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:type" sv:type="String">
+            <sv:value>composermode</sv:value>
+          </sv:property>
+          <sv:property sv:multiple="true" sv:name="hst:types" sv:type="String">
+            <sv:value>preview</sv:value>
+          </sv:property>
+          <sv:node sv:name="edit">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+              <sv:value>hst:mount</sv:value>
+            </sv:property>
+            <sv:property sv:name="jcr:uuid" sv:type="String">
+              <sv:value>fb0323e8-a9e1-45c6-be8a-b02d90e1582b</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:ismapped" sv:type="Boolean">
+              <sv:value>false</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:namedpipeline" sv:type="String">
+              <sv:value>ComposerBootstrapPipeline</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:type" sv:type="String">
+              <sv:value>composer</sv:value>
+            </sv:property>
+          </sv:node>
+          <sv:node sv:name="_rp">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+              <sv:value>hst:mount</sv:value>
+            </sv:property>
+            <sv:property sv:name="jcr:uuid" sv:type="String">
+              <sv:value>247649ca-fb05-4e43-8855-56d46ac75440</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:ismapped" sv:type="Boolean">
+              <sv:value>false</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:namedpipeline" sv:type="String">
+              <sv:value>ComposerPipeline</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:type" sv:type="String">
+              <sv:value>composer</sv:value>
+            </sv:property>
+          </sv:node>
+        </sv:node>
+        <sv:node sv:name="preview">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hst:mount</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>e61f2b07-4b17-4658-9cdd-738c6951780a</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:authenticated" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:mountpoint" sv:type="String">
+            <sv:value>/hst:hst/hst:sites/stripesintegration-preview</sv:value>
+          </sv:property>
+          <sv:property sv:multiple="true" sv:name="hst:roles" sv:type="String">
+            <sv:value>everybody</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:type" sv:type="String">
+            <sv:value>preview</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="dev-local">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hst:virtualhostgroup</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>15e9afde-1dba-4edd-9147-236906cd367a</sv:value>
+    </sv:property>
+    <sv:node sv:name="localhost">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hst:virtualhost</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>1e7a34f5-30e2-441f-94b3-4f7596ef00f3</sv:value>
+      </sv:property>
+      <sv:node sv:name="hst:root">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hst:mount</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+          <sv:value>2890bc18-7e8d-4447-9c76-e45ec3e4301e</sv:value>
+        </sv:property>
+        <sv:property sv:name="hst:mountpoint" sv:type="String">
+          <sv:value>/hst:hst/hst:sites/stripesintegration-live</sv:value>
+        </sv:property>
+        <sv:node sv:name="manager">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hst:mount</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>170824aa-9f78-499b-93fb-0bb770c56773</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:authenticated" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:mountpoint" sv:type="String">
+            <sv:value>/hst:hst/hst:sites/stripesintegration-preview</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:namedpipeline" sv:type="String">
+            <sv:value>ComposerPreviewPipeline</sv:value>
+          </sv:property>
+          <sv:property sv:multiple="true" sv:name="hst:roles" sv:type="String">
+            <sv:value>admin</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:sessionstateful" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:subjectbasedsession" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:type" sv:type="String">
+            <sv:value>composermode</sv:value>
+          </sv:property>
+          <sv:property sv:multiple="true" sv:name="hst:types" sv:type="String">
+            <sv:value>preview</sv:value>
+          </sv:property>
+          <sv:node sv:name="edit">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+              <sv:value>hst:mount</sv:value>
+            </sv:property>
+            <sv:property sv:name="jcr:uuid" sv:type="String">
+              <sv:value>7be28c9d-0ce5-42c5-b4c1-5e81f3097a69</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:ismapped" sv:type="Boolean">
+              <sv:value>false</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:namedpipeline" sv:type="String">
+              <sv:value>ComposerBootstrapPipeline</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:type" sv:type="String">
+              <sv:value>composer</sv:value>
+            </sv:property>
+          </sv:node>
+          <sv:node sv:name="_rp">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+              <sv:value>hst:mount</sv:value>
+            </sv:property>
+            <sv:property sv:name="jcr:uuid" sv:type="String">
+              <sv:value>dbb38dbb-abb4-42c1-9eda-9fc410ce326d</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:ismapped" sv:type="Boolean">
+              <sv:value>false</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:namedpipeline" sv:type="String">
+              <sv:value>ComposerPipeline</sv:value>
+            </sv:property>
+            <sv:property sv:name="hst:type" sv:type="String">
+              <sv:value>composer</sv:value>
+            </sv:property>
+          </sv:node>
+        </sv:node>
+        <sv:node sv:name="preview">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hst:mount</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>4bda7ced-e67c-4e95-a724-1032510ad29f</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:authenticated" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:mountpoint" sv:type="String">
+            <sv:value>/hst:hst/hst:sites/stripesintegration-preview</sv:value>
+          </sv:property>
+          <sv:property sv:multiple="true" sv:name="hst:roles" sv:type="String">
+            <sv:value>everybody</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:type" sv:type="String">
+            <sv:value>preview</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="web">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hst:mount</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>d9e6777e-3170-4cfd-b087-29091a8130ad</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:ismapped" sv:type="Boolean">
+            <sv:value>false</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:mountsite" sv:type="String">
+            <sv:value>stripes</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:namedpipeline" sv:type="String">
+            <sv:value>StripesPipeline</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:showport" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="stripes">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hst:mount</sv:value>
+          </sv:property>
+          <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>ffe9f68d-9fb9-426c-9561-604b54e78bd7</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:alias" sv:type="String">
+            <sv:value>stripes</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:mountpoint" sv:type="String">
+            <sv:value>/hst:hst/hst:sites/stripesintegration-live</sv:value>
+          </sv:property>
+          <sv:property sv:name="hst:showport" sv:type="Boolean">
+            <sv:value>true</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+</sv:node>
