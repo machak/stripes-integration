@@ -17,10 +17,6 @@ import net.sourceforge.stripes.action.ActionBeanContext;
 public class HstBeanContext extends ActionBeanContext {
 
 
-    @Override
-    public String getSourcePage() {
-        return getStripesRequest().getRequestURL().toString().replace("http://localhost:8080/site","").replaceAll("http://10\\.10\\.100\\.144:8080/site","");
-    }
 
     public HippoBean getContentBean(){
         return  getStripesRequest().getContent();
