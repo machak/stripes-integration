@@ -14,10 +14,8 @@ import org.jdom.Content;
 public class StripesHttpServletRequestWrapper extends GenericHttpServletRequestWrapper {
 
     private String requestURI;
-    private String requestURL;
-    private HstRequestContext requestContext;
-    private String matrixParamsSuffix;
-    private HippoBean content;
+    private final String matrixParamsSuffix;
+    private final HippoBean content;
 
     public StripesHttpServletRequestWrapper(HstRequestContext requestContext, HttpServletRequest request, String servletPath, String requestPath, final HippoBean node) {
         super(request);
@@ -40,16 +38,15 @@ public class StripesHttpServletRequestWrapper extends GenericHttpServletRequestW
         setPathInfo(tempPathInfo);
         this.matrixParamsSuffix = tempMatrixParamsSuffix;
 
-        this.requestContext = requestContext;
     }
 
     @Override
     public String getRequestURI() {
         if (requestURI == null) {
             StringBuilder sbTemp = new StringBuilder(getContextPath()).append(getServletPath());
-            String pathInfo = getPathInfo();
-            if (pathInfo != null) {
-                sbTemp.append(pathInfo);
+            String path = getPathInfo();
+            if (path != null) {
+                sbTemp.append(path);
             }
             if (matrixParamsSuffix != null) {
                 sbTemp.append(matrixParamsSuffix);

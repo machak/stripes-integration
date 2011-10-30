@@ -15,10 +15,8 @@ import org.slf4j.LoggerFactory;
  */
 public class StripesValve extends AbstractValve {
 
-    @SuppressWarnings({"UnusedDeclaration"})
-    private static Logger log = LoggerFactory.getLogger(StripesValve.class);
 
-    private StripesService service;
+    private final StripesService service;
 
     public StripesValve(final StripesService stripesService) {
         service = stripesService;

@@ -92,24 +92,23 @@ public class StripesService implements StripesValveService {
             contentPathInfo = resolvedSiteMapItem.getRelativeContentPath();
         }
 
-        String requestContentPath = getMountContentPath(requestContext) + "/hst:content/"+ (contentPathInfo != null ? contentPathInfo : "");
+        String requestContentPath = getMountContentPath(requestContext) + "/hst:content/" + (contentPathInfo != null ? contentPathInfo : "");
 
         Node node;
-        String resourceType;
 
         try {
             Session jcrSession = requestContext.getSession();
-            // TODO change:
-            requestContentPath = requestContentPath.replaceAll("\\.action","");
+            // TODO change, hack:
+            requestContentPath = requestContentPath.replaceAll("\\.action", "");
 
 
             node = getContentNode(jcrSession, requestContentPath);
             if (node == null) {
                 throw new ContainerNotFoundException("Cannot find content node at '" + requestContentPath + '\'', new WebApplicationException(Response.Status.NOT_FOUND));
             }
-            resourceType = getObjectConverter(requestContext).getPrimaryObjectType(node);
+            String resourceType = getObjectConverter(requestContext).getPrimaryObjectType(node);
             if (resourceType == null) {
-                throw new ContainerException("Cannot find the resourceType for node '" + node.getPath() + "' with primary type '" + node.getPrimaryNodeType().getName() + "'", new WebApplicationException(Response.Status.NOT_FOUND));
+                throw new ContainerException("Cannot find the resourceType for node '" + node.getPath() + "' with primary type '" + node.getPrimaryNodeType().getName() + '\'', new WebApplicationException(Response.Status.NOT_FOUND));
             }
         } catch (PathNotFoundException pnf) {
             throw new ContainerNotFoundException(new WebApplicationException(Response.Status.NOT_FOUND));
@@ -129,7 +128,7 @@ public class StripesService implements StripesValveService {
     }
 
 
-    protected String getStripesServletPath(HstRequestContext requestContext) throws ContainerException {
+    protected String getStripesServletPath(HstRequestContext requestContext) {
         ResolvedMount resolvedMount = requestContext.getResolvedMount();
         return new StringBuilder(resolvedMount.getResolvedMountPath()).append(getServletPath()).toString();
     }
@@ -163,7 +162,7 @@ public class StripesService implements StripesValveService {
 
     private HippoBean convert(final Node relNode) {
         try {
-           return (HippoBean) objectConverter.getObject(relNode);
+            return (HippoBean) objectConverter.getObject(relNode);
         } catch (ObjectBeanManagerException e) {
             log.error("Error converting node", e);
         }
@@ -173,8 +172,8 @@ public class StripesService implements StripesValveService {
 
     protected ObjectConverter getObjectConverter(HstRequestContext requestContext) {
         if (objectConverter == null) {
-            List<Class<? extends HippoBean>> annotatedClasses = getAnnotatedClasses(requestContext);
-            objectConverter = ObjectConverterUtils.createObjectConverter(annotatedClasses);
+            List<Class<? extends HippoBean>> classes = getAnnotatedClasses(requestContext);
+            objectConverter = ObjectConverterUtils.createObjectConverter(classes);
         }
         return objectConverter;
     }
@@ -199,13 +198,13 @@ public class StripesService implements StripesValveService {
 
     protected List<Class<? extends HippoBean>> getAnnotatedClasses(HstRequestContext requestContext) {
         if (annotatedClasses == null) {
-            String annoClassPathResourcePath = getAnnotatedClassesResourcePath();
+            String annotatedClassPath = getAnnotatedClassesResourcePath();
 
-            if (StringUtils.isBlank(annoClassPathResourcePath)) {
-                annoClassPathResourcePath = requestContext.getServletContext().getInitParameter(BEANS_ANNOTATED_CLASSES_CONF_PARAM);
+            if (StringUtils.isBlank(annotatedClassPath)) {
+                annotatedClassPath = requestContext.getServletContext().getInitParameter(BEANS_ANNOTATED_CLASSES_CONF_PARAM);
             }
 
-            annotatedClasses = AnnotatedContentBeanClassesScanner.scanAnnotatedContentBeanClasses(requestContext, annoClassPathResourcePath);
+            annotatedClasses = AnnotatedContentBeanClassesScanner.scanAnnotatedContentBeanClasses(requestContext, annotatedClassPath);
         }
 
         return annotatedClasses;

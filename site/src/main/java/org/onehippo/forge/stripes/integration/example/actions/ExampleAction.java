@@ -21,7 +21,7 @@ import net.sourceforge.stripes.validation.ValidateNestedProperties;
 @UrlBinding("/web/{view}.action")
 public class ExampleAction extends BaseAction {
 
-    private static Logger log = LoggerFactory.getLogger(ExampleAction.class);
+
     private String view;
 
     @ValidateNestedProperties({
